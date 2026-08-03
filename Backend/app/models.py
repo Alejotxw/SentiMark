@@ -2,7 +2,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class Sentiment(str, Enum):
@@ -64,3 +64,12 @@ class SentimentDistributionSlice(BaseModel):
 class TopicAnalysis(BaseModel):
     topic: str
     sentiment: int
+
+
+class SentimentPredictionRequest(BaseModel):
+    text: str = Field(max_length=5000)
+
+
+class SentimentPredictionResponse(BaseModel):
+    sentiment: Sentiment
+    scores: dict[str, float]

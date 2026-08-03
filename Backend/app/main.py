@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import CORS_ORIGINS
-from app.routers import mentions, metrics
+from app.routers import mentions, metrics, sentiment
 
 app = FastAPI(title="SentiMark API")
 
@@ -16,6 +16,7 @@ app.add_middleware(
 
 app.include_router(mentions.router)
 app.include_router(metrics.router)
+app.include_router(sentiment.router)
 
 
 @app.get("/health")

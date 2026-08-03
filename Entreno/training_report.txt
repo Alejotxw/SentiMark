@@ -1,0 +1,17 @@
+SentiMark sentiment classifier - training report
+Rows: 521,682 | train=469,513 test=52,169
+
+              precision    recall  f1-score   support
+
+    negative      0.640     0.601     0.620     13478
+     neutral      0.133     0.313     0.187      3186
+    positive      0.860     0.776     0.816     35505
+
+    accuracy                          0.702     52169
+   macro avg      0.544     0.563     0.541     52169
+weighted avg      0.759     0.702     0.727     52169
+
+Confusion matrix (rows=true, cols=pred) [positive, neutral, negative]:
+[[27554  4384  3567]
+ [ 1197   998   991]
+ [ 3284  2098  8096]]
